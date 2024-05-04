@@ -1,1 +1,4 @@
+com\blu\app\api\controller\UserController.class
+com\blu\app\api\model\User.class
+com\blu\app\service\UserService.class
 com\blu\app\App.class
