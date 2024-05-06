@@ -29,4 +29,15 @@ public class UserService {
         }
         return users;
     }
+
+    public User getUserById(int id){
+        for (User user: users) {
+            if(id == user.getId()){
+                return user;
+
+            }
+        }
+        return null;
+
+    }
 }

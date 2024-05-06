@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Blu-training2" target="1.5" />
+      <module name="Blu-training2" target="22" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
