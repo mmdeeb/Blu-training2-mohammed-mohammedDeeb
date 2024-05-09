@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -26,6 +27,13 @@ public class BookController {
     public ResponseEntity<List<Book>> getAllBooks() {
         List<Book> books = bookService.getAllBooks();
         return new ResponseEntity<>(books, HttpStatus.OK);
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<Page<Book>> getBooksWithPagination(@RequestParam(defaultValue = "0") int page,
+                                                     @RequestParam(defaultValue = "10") int size) {
+        Page<Book> booksPage = bookService.getBooksWithPagination(page, size);
+        return new ResponseEntity<>(booksPage, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -55,5 +63,7 @@ public class BookController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+
 
 }

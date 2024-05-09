@@ -3,6 +3,9 @@ package com.blu.app.service;
 import com.blu.app.api.model.Book;
 import com.blu.app.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -24,6 +27,12 @@ public class BookService {
                     org.springframework.http.HttpStatus.NOT_FOUND, "Book not found");
         }
         return book;
+    }
+
+
+    public Page<Book> getBooksWithPagination(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return bookRepository.findAll(pageable);
     }
 
     public Book addBook(Book book) {
