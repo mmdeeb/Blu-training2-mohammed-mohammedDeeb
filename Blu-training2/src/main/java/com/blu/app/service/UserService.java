@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,12 +25,12 @@ public class UserService {
     }
 
     public User getUserById(Integer id){
-        Optional<User> userOptional = userRepository.findById(id);
-        if(userOptional.isEmpty()){
+        User user = userRepository.findById(id).orElse(null);
+        if(user==null){
             throw new ResponseStatusException(
                     org.springframework.http.HttpStatus.NOT_FOUND, "Book not found");
         }
-        return userOptional.get();
+        return user;
 
     }
 }

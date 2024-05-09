@@ -1,4 +1,9 @@
+com\blu\app\repositories\BookRepository.class
+com\blu\app\api\model\Book.class
 com\blu\app\api\controller\UserController.class
 com\blu\app\api\model\User.class
+com\blu\app\repositories\UserRepository.class
+com\blu\app\api\controller\BookController.class
+com\blu\app\service\BookService.class
 com\blu\app\service\UserService.class
 com\blu\app\App.class

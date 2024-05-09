@@ -85,8 +85,8 @@
           <compilerArgs>
             <arg>-parameters</arg>
           </compilerArgs>
-          <source>22</source>
-          <target>22</target>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
 
